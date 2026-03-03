@@ -2,7 +2,6 @@ import reactLogo from '../../assets/images/react-logo.png';
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 
-// Chuyển sang relative path cho an toàn tuyệt đối trên Vercel
 import { Collapsible } from '../../components/ui/collapsible';
 import { ExternalLink } from '../../components/external-link';
 import ParallaxScrollView from '../../components/parallax-scroll-view';
@@ -24,32 +23,29 @@ export default function TabTwoScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{ fontFamily: Fonts.rounded }}>
+        <ThemedText type="title" style={{ fontFamily: Fonts?.rounded }}>
           Explore
         </ThemedText>
       </ThemedView>
 
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
+      <ThemedText>Ứng dụng này giúp bạn quét mã QR và nhận phần thưởng ngay lập tức.</ThemedText>
 
-      {/* Các phần khác giữ nguyên... */}
-
-      <Collapsible title="Images">
+      <Collapsible title="Hỗ trợ đa nền tảng">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes.
+          Bạn có thể chạy ứng dụng này trên Android, iOS và Web. Trình quét mã hoạt động tốt nhất trên thiết bị di động.
+        </ThemedText>
+      </Collapsible>
+
+      <Collapsible title="Hình ảnh tĩnh">
+        <ThemedText>
+          Ví dụ về cách hiển thị logo React bằng thư viện <ThemedText type="defaultSemiBold">expo-image</ThemedText>:
         </ThemedText>
         <Image
-          source={reactLogo} // ĐÃ SỬA: Dùng biến import thay vì require(@/...)
+          source={reactLogo}
           style={{ width: 100, height: 100, alignSelf: 'center', marginTop: 15 }}
+          contentFit="contain"
         />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
       </Collapsible>
-      
-      {/* ... giữ nguyên các phần còn lại */}
     </ParallaxScrollView>
   );
 }
@@ -64,5 +60,6 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+    marginBottom: 10,
   },
 });
