@@ -1,10 +1,11 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+// Thay vì dùng @/, hãy dùng đường dẫn tương đối từ file _layout.tsx
+import { HapticTab } from '../../components/haptic-tab';
+import { IconSymbol } from '../../components/ui/icon-symbol';
+import { Colors } from '../../constants/theme';
+import { useColorScheme } from '../../hooks/use-color-scheme'; // Dòng số 7 bị lỗi
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
